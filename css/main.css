@@ -1,0 +1,54 @@
+:root{
+    --background-color: rgb(56 52 51);
+    --description-color: rgb(204 204 202);
+    --left-nav-color: rgb(30 59 139);
+}
+
+.container {
+    background-color: var(--background-color);
+    display: grid;
+    grid-template-columns: 15% 40% 40%; /* Definindo colunas corretamente */
+    grid-template-rows: 300px 300px 100px; /* Definindo linhas corretamente */
+    grid-template-areas: 
+        "nav post1 post2"
+        "nav post3 post4"
+        "footer footer footer"; /* Áreas definidas corretamente */
+    gap: 3px;
+    width: 100% vw;
+    height: 100% vh;
+}
+
+.celula {
+    min-height: 40px;
+    background-color: aqua;
+}
+
+.celula:is(:nth-child(1), :nth-child(4)) {
+    grid-area: nav;
+    background-color: blueviolet;
+}
+
+.celula:is(:nth-child(2)) {
+    grid-area: post1;
+    background-color: brown;
+}
+
+.celula:is(:nth-child(3)) {
+    grid-area: post2;
+    background-color: brown;
+}
+
+.celula:is(:nth-child(5)) {
+    grid-area: post3;
+    background-color: brown;
+}
+
+.celula:is(:nth-child(6)) {
+    grid-area: post4;
+    background-color: brown;
+}
+
+.celula:is(:nth-child(7), :nth-child(8), :nth-child(9)) {
+    grid-area: footer;
+    background-color: cadetblue;
+}
